@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+
+<body>
+
+    <div class="form">
+        <nav class="upper">
+            <h1>Love Calculator</h1>
+        </nav>
+        <div class="input">
+            <input type="text" id="name1" placeholder="Emri Juaj">
+            <h3>+</h3>
+            <input type="text" id="name2" placeholder="Emri i asaj">
+        </div>
+
+        <div class="button">
+            <button id="button-p" onclick="checkLove()">Kliko</button>
+        </div>
+        <div class="love">
+        <div class="love">
+            <input type="text" id="love-a" placeholder="Perqindja e Dashurise">
+        </div>
+
+        <footer class="pray">
+            <h3 id="yesab">Faleminderit</h3>
+        </footer>
+    </div>
+
+    <script>
+        function checkLove() {
+            let name1 = document.getElementById('name1').value;
+            let name2 = document.getElementById('name2').value;
+            if ((name1 !== '') && (name2 !== '')) {
+                if ((name1.length < 3) && (name2.length < 3)) {
+                    alert("Emri duhet te jete me i gjate se 3 karaktere")
+                }
+                else if ((name1.length<3)&& (name2.length>3))
+                {
+                    alert("Emri duhet te jete me i gjate se 3 karaktere");
+                }
+                else if ((name2.length<3)&& (name1.length>3))
+                {
+                    alert("Emri duhet te jete me i gjate se 3 karaktere");
+                }
+                else {
+                    let loveData = Math.floor(Math.random() * 100);
+                    document.getElementById('love-a').value = loveData + "%";
+                }
+            }
+            else if ((name1 !== '') && (name2 === '')) {
+                alert("Vendos ermin e saj");
+            }
+            else if ((name1 === '') && (name2 !== '')) {
+                alert("Vendos ermin tend ");
+            }
+            else {
+                alert('Vendos te dy emrat');
+            }
+        }
+    </script>
+</body>
+
+</html>
